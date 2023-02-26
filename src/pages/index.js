@@ -1,10 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "@/styles/Home.module.css";
+import { MdMarkEmailUnread } from "react-icons/md";
 
-const inter = Inter({ subsets: ['latin'] })
-
+import { FaDiscord, FaInstagram } from "react-icons/fa";
 export default function Home() {
   return (
     <>
@@ -14,110 +13,59 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
+      <main className=" overflow-hidden px-10">
+        <div className="main-content h-screen   flex  justify-between px-3 items-center">
+          <div className=" max-w-xl ">
+            <article className="pt-20">
+              <h1 className="font-semibold text-6xl py-4">
+                Membuat <span className="text-blue-500">Teknologi</span> Baru,
+                Bersama Kami.
+              </h1>
+            </article>
+            <form className="flex justify-start my-5 items-center gap-3">
+              <label
+                className="text-3xl hover:scale-110 hover:text-blue-500"
+                htmlFor="email"
+              >
+                <MdMarkEmailUnread />
+              </label>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
+              <input
+                placeholder="Enter Your Email Here To Join..."
+                id="email"
+                className="duration-300 w-3/4 bg-transparent border-b-2 border-blue-500 outline-none  py-2  focus:py-3 focus:px-6 "
+              />
+            </form>
+
+            <article className="pb-20">
+              <p className="text-lg font-medium">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industrys standard dummy text
+                ever since the 1500s
+              </p>
+            </article>
+            <ul className="flex  text-3xl justify-start gap-5 links items-center max-w-md  ">
+              <li>
+                <FaDiscord />
+                <p className="text-lg">Join Discord</p>
+              </li>
+              <li>
+                <FaInstagram />
+                <p className="text-lg">Follow Instagram</p>
+              </li>
+            </ul>
+          </div>
+          <div>
             <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
+              height={200}
+              width={600}
+              src="/assets/images/heroes.png"
+              alt="hero"
               priority
             />
           </div>
         </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
       </main>
     </>
-  )
+  );
 }
